@@ -1,15 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <NavBar /> <!-- Corrected the component name to NavBar -->
+    <div class="main-content">
+      <router-view />
+    </div>
+    <TheFooter />
+
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavBar from './components/NavBar.vue'; 
+import TheFooter from './components/TheFooter.vue'; 
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    NavBar, // Corrected component name
+    TheFooter
   }
 }
 </script>
@@ -22,5 +30,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.main-content {
+    padding-top: 60px; /* Adjust according to your navbar height */
 }
 </style>
